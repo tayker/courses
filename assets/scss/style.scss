@@ -1,0 +1,27 @@
+/* ADD NORMALIZE */
+@import "node_modules/node-normalize-scss/_normalize";
+
+/* START FONTS */
+@import "fonts";
+/* END FONTS */
+
+/* ADD ICONFONT VARIABLES */
+//@import "icons/_iconfont__variables";
+
+/* DEFINED ICONS*/
+//@import "icons/_iconfont__icons";
+
+/* ADD SCSS VARIABLES */
+@import "variables";
+
+/* START GENERAL STYLES */
+@import "general";
+/* END GENERAL STYLES */
+
+/* START LAYOUT STYLES */
+@import "sections";
+/* END LAYOUT STYLES */
+
+/* START MEDIAQUERIES STYLES*/
+@import "mediaqueries";
+/* END MEDIAQUERIES STYLES */
