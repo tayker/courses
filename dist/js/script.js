@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function(){
     var navBtn = document.getElementById('navBtn');
     var overlay = document.getElementById('overlay');
     var subscribeField = document.getElementById('subscribeField');
-    
+	
     navBtn.addEventListener('click', function(e){
         e.preventDefault();
         
@@ -33,6 +33,18 @@ document.addEventListener('DOMContentLoaded', function(){
         });
     });
 
+	document.querySelectorAll('a[data-course]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+			if(this.dataset.course == 'open'){
+				document.getElementById('courses').classList.remove('active');
+			}
+			else if(this.dataset.course == 'close'){
+				document.getElementById('courseInfo').classList.remove('active');
+			}
+            document.querySelector(this.getAttribute('href')).classList.add('active');
+        });
+    });
     function focused(){
         subscribeField.focus()
     }
@@ -47,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function(){
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             let modal = document.querySelector(this.getAttribute('href'));
-            modal.classList.add('active')
+            modal.classList.add('active');
             overlay.classList.add('active');
             overlay.addEventListener('click', function(){
                 this.classList.remove('active');
@@ -63,29 +75,47 @@ document.addEventListener('DOMContentLoaded', function(){
         });
     });
     
-    document.querySelector('#moreModal a[data-modal]').addEventListener('click', function(){
-       document.getElementById('moreModal').classList.remove('active');
-    });
+	
+function countdown(endDate) {
+  let days, hours, minutes, seconds;
+  
+  endDate = new Date(endDate).getTime();
+  
+  if (isNaN(endDate)) {
+	return;
+  }
+  
+  setInterval(calculate, 1000);
+  
+  function calculate() {
+    let startDate = new Date();
+    startDate = startDate.getTime();
     
-    var stars = document.querySelectorAll('.stars .button--star');
-    stars.forEach((star, i) => {
-        star.addEventListener('click', function(){
-            starsRate(i);
-            localStorage.setItem('starsRate', i);
-        });
-    });
+    let timeRemaining = parseInt((endDate - startDate) / 1000);
     
-    function starsRate(i){
-        stars.forEach( star => {
-            star.classList.remove('active');
-        });
-        for(l=0;l<stars.length;l++){
-            if(i >= l){
-                stars[l].classList.add('active');
-            }
-        };
-    };
-    if(localStorage.getItem('starsRate') !== undefined){
-        starsRate(localStorage.getItem('starsRate'));
-    };
+    if (timeRemaining >= 0) {
+      days = parseInt(timeRemaining / 86400);
+      timeRemaining = (timeRemaining % 86400);
+      
+      hours = parseInt(timeRemaining / 3600);
+      timeRemaining = (timeRemaining % 3600);
+      
+      minutes = parseInt(timeRemaining / 60);
+      timeRemaining = (timeRemaining % 60);
+      
+      seconds = parseInt(timeRemaining);
+      
+      document.getElementById("days").innerHTML = parseInt(days, 10);
+      document.getElementById("hours").innerHTML = ("0" + hours).slice(-2);
+      document.getElementById("minutes").innerHTML = ("0" + minutes).slice(-2);
+      document.getElementById("seconds").innerHTML = ("0" + seconds).slice(-2);
+    } else {
+      return;
+    }
+  }
+}
+
+(function () { 
+  countdown('08/01/2018 05:00:00 PM'); 
+}());
 });

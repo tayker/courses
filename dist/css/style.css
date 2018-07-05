@@ -966,7 +966,9 @@ li {
         padding-right: 10px; }
 
 .section--goods {
-  position: relative; }
+  display: none; }
+  .section--goods.active {
+    display: block; }
   .section--goods:before {
     content: "";
     position: absolute;
@@ -1114,99 +1116,125 @@ li {
         margin: 10px 0 0 0;
         max-width: 100%; }
 
-.section--courses-info .title .link--previous {
-  font-size: 18px;
-  color: #40596b;
-  text-transform: uppercase;
-  line-height: 1.2;
-  text-decoration: none; }
-
-.section--courses-info .title .current {
-  color: #263036; }
-
-.section--courses-info .main {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap; }
-  .section--courses-info .main video {
-    background-color: black;
-    border-radius: 6px;
-    width: 100%;
-    max-width: 466px; }
-  .section--courses-info .main .info {
-    width: 100%;
-    max-width: 640px; }
-    .section--courses-info .main .info__top {
-      background-color: #6e7f8a;
+.section--courses-info {
+  display: none; }
+  .section--courses-info.active {
+    display: block; }
+  .section--courses-info .title .link--previous {
+    font-size: 18px;
+    color: #40596b;
+    text-transform: uppercase;
+    line-height: 1.2;
+    text-decoration: none; }
+  .section--courses-info .title .current {
+    color: #263036; }
+  .section--courses-info .main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+    .section--courses-info .main video {
+      background-color: black;
       border-radius: 6px;
-      padding: 16px 6px 6px 6px;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-pack: justify;
-          -ms-flex-pack: justify;
-              justify-content: space-between;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap; }
-      .section--courses-info .main .info__top .count {
-        color: #fff;
-        text-transform: uppercase; }
-        .section--courses-info .main .info__top .count .highlight {
-          color: #eccc68;
-          font-weight: bold; }
-      .section--courses-info .main .info__top .timer {
-        color: white;
-        line-height: 1.5;
-        text-transform: uppercase; }
-        .section--courses-info .main .info__top .timer__clock {
-          font-weight: bold; }
-      .section--courses-info .main .info__top .button {
-        max-width: 100%;
-        margin-top: 10px; }
-        .section--courses-info .main .info__top .button__text {
-          font-size: 16px;
+      width: auto;
+      height: auto;
+      max-height: 244px;
+      max-width: 466px; }
+    .section--courses-info .main .info {
+      width: 100%;
+      max-width: 640px; }
+      .section--courses-info .main .info__top {
+        background-color: #6e7f8a;
+        border-radius: 6px;
+        padding: 16px 6px 6px 6px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap; }
+        .section--courses-info .main .info__top .count {
+          color: #fff;
+          text-transform: uppercase; }
+          .section--courses-info .main .info__top .count .highlight {
+            color: #eccc68;
+            font-weight: bold; }
+        .section--courses-info .main .info__top .timer {
+          color: white;
           line-height: 1.5;
-          font-weight: bold;
-          color: #000; }
-    .section--courses-info .main .info__main {
-      background-color: #83919b;
-      margin: 0 8px;
-      padding: 12px 20px;
-      -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.15);
-              box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.15); }
-      .section--courses-info .main .info__main .table {
-        width: 100%;
-        color: white;
-        font-size: 14px; }
-        .section--courses-info .main .info__main .table tr > td {
-          text-align: left;
-          line-height: 1.2; }
-          .section--courses-info .main .info__main .table tr > td + td {
+          text-transform: uppercase; }
+          .section--courses-info .main .info__top .timer__clock {
+            font-weight: bold; }
+        .section--courses-info .main .info__top .button {
+          max-width: 100%;
+          margin-top: 10px; }
+          .section--courses-info .main .info__top .button__text {
+            font-size: 16px;
+            line-height: 1.5;
             font-weight: bold;
-            text-align: right;
+            color: #000; }
+          .section--courses-info .main .info__top .button .price-old {
+            font-weight: 400;
+            color: #666;
+            opacity: 0.5;
+            text-decoration: line-through; }
+          .section--courses-info .main .info__top .button .price-now {
+            margin: 0 10px;
+            position: relative; }
+            .section--courses-info .main .info__top .button .price-now:before, .section--courses-info .main .info__top .button .price-now:after {
+              position: absolute;
+              font-size: 20px;
+              top: 50%;
+              -webkit-transform: translateY(-50%);
+                  -ms-transform: translateY(-50%);
+                      transform: translateY(-50%); }
+            .section--courses-info .main .info__top .button .price-now:after {
+              content: "\002F";
+              right: -6px; }
+            .section--courses-info .main .info__top .button .price-now:before {
+              content: "\2010";
+              left: -10px;
+              top: 4px; }
+      .section--courses-info .main .info__main {
+        background-color: #83919b;
+        margin: 0 8px;
+        padding: 12px 20px;
+        -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.15);
+                box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.15); }
+        .section--courses-info .main .info__main .table {
+          width: 100%;
+          color: white;
+          font-size: 14px; }
+          .section--courses-info .main .info__main .table tr > td {
+            text-align: left;
             line-height: 1.2; }
-    .section--courses-info .main .info .link {
-      background-color: #7c8a93;
-      display: block;
-      margin: 0 8px;
-      padding: 20px 0;
-      border-radius: 0 0 6px 6px; }
-  .section--courses-info .main .description {
-    color: #273d4c;
-    font-size: 14px;
-    text-align: left;
-    margin-top: 20px; }
-    .section--courses-info .main .description .title {
-      font-size: 18px;
-      font-weight: bold;
-      text-transform: uppercase;
-      line-height: 1.111;
-      margin-bottom: 30px; }
+            .section--courses-info .main .info__main .table tr > td + td {
+              font-weight: bold;
+              text-align: right;
+              line-height: 1.2; }
+      .section--courses-info .main .info .link {
+        background-color: #7c8a93;
+        display: block;
+        margin: 0 8px;
+        padding: 20px 0;
+        border-radius: 0 0 6px 6px; }
+    .section--courses-info .main .description {
+      color: #273d4c;
+      font-size: 14px;
+      text-align: left;
+      margin-top: 20px; }
+      .section--courses-info .main .description .title {
+        font-size: 18px;
+        font-weight: bold;
+        text-transform: uppercase;
+        line-height: 1.111;
+        margin-bottom: 30px; }
 
 .section--subscribe {
   background-color: #f5f6f7; }
@@ -1582,7 +1610,14 @@ li {
       max-width: 46%;
       margin-bottom: 20px; }
       .section--goods .goods__item .table td {
-        padding-left: 60px; } }
+        padding-left: 60px; }
+  .section--courses-info .main video {
+    max-width: 100%;
+    max-height: 100%;
+    max-width: 100%;
+    margin: 0 auto 20px auto; }
+  .section--courses-info .main .info {
+    max-width: 100%; } }
 
 @media screen and (max-width: 968px) {
   .section--main {

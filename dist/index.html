@@ -75,7 +75,7 @@
                                 С помощью методик которыми с вами делится автор этого курса, вы без 
                                 особого труда сможете увеличить доход своего бизнеса в разы.
                             </div>
-                            <a href="#moreModal" class="button" data-modal>
+                            <a href="#courseInfo" class="button" data-course="open">
                                 <span class="button__text">
                                     подробнее
                                 </span>
@@ -91,7 +91,7 @@
                                 С помощью методик которыми с вами делится автор этого курса, вы без 
                                 особого труда сможете увеличить доход своего бизнеса в разы.
                             </div>
-                            <a href="#moreModal" class="button" data-modal>
+                            <a href="#courseInfo" class="button" data-course="open">
                                 <span class="button__text">
                                     подробнее
                                 </span>
@@ -107,7 +107,7 @@
                                 С помощью методик которыми с вами делится автор этого курса, вы без 
                                 особого труда сможете увеличить доход своего бизнеса в разы.
                             </div>
-                            <a href="#moreModal" class="button" data-modal>
+                            <a href="#courseInfo" class="button" data-course="open">
                                 <span class="button__text">
                                     подробнее
                                 </span>
@@ -154,7 +154,7 @@
             </ul>
         </div>
     </main>
-    <section class="section section--goods" id="courses">
+    <section class="section section--goods active" id="courses">
         <div class="container">
             <h2 class="title title--secondary">
                 полезные навыки
@@ -164,10 +164,10 @@
                     <h3 class="title title--third">
                         SEO аналитика
                     </h3>
-                    <a href="#moreModal" class="img-wrapper" data-modal>
+                    <a href="#courseInfo" class="img-wrapper" data-course="open">
                         <img src="./images/252x170.png" alt="">
                     </a>
-                    <a href="#moreModal" class="subtitle" data-modal>
+                    <a href="#courseInfo" class="subtitle" data-course="open">
                         Как побороть лень на уровне подсознания 
                     </a>
 					<div class="wrapper-main">
@@ -200,7 +200,7 @@
                     	</div>
                     </div>
 					<div class="wrapper-btn">
-						<a href="" class="button">
+						<a href="#courseInfo" class="button" data-course="open">
 							<span class="button__text">
 								подробнее
 							</span>
@@ -210,26 +210,29 @@
             </ul>
         </div>
     </section>
-    <section class="section section--courses-info" id="coursesInfo">
+    <section class="section section--courses-info" id="courseInfo">
         <div class="container">
             <h2 class="title title--secondary">
-                <a href="" class="link--previous">полезные навыки</a> &gt; <span class="current">как побороть лень на уровне подсознания за 10 шагов</span>
+                <a href="#courses" class="link--previous" data-course="close">полезные навыки</a> &gt; <span class="current">как побороть лень на уровне подсознания за 10 шагов</span>
             </h2>
             <div class="main">
-            	<video src=""></video>
+            	<video src="https://dl3.webmfiles.org/big-buck-bunny_trailer.webm" controls></video>
             	<div class="info">
             		<div class="info__top">
             			<div class="count"><span class="highlight" id="counter">92</span> купили этот курс</div>
-            			<div class="timer">до конца акции осталось <span class="timer__clock"id="timer">3 дня 12 часов</span></div>
+            			<div class="timer">до конца акции осталось <span class="timer__clock"id="timer">
+            				<span class="days"><span id="days"></span> дней</span>
+            				<span id="hours"></span>:<span id="minutes"></span>:<span id="seconds"></span>
+            			</span></div>
             			<button class="button">
             				<span class="button__text">
             					купить
-            				</span>
-            				<span class="price-now">
-            					201 p
-            				</span>
-            				<span class="price-old">
-            					240 p
+								<span class="price-now">
+									201 p
+								</span>
+								<span class="price-old">
+									240 p
+								</span>
             				</span>
             			</button>
             		</div>
@@ -515,101 +518,6 @@
                 </h5>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam culpa iusto pariatur excepturi magni eius aliquid, soluta reprehenderit ea. Molestiae voluptates minus dignissimos incidunt doloremque expedita suscipit, id aut amet in culpa commodi laudantium fuga ipsam esse cum quod facilis iure consectetur earum natus. Modi tempore rerum soluta, fugit deserunt perspiciatis sint corporis quidem nisi tenetur sapiente molestias non quibusdam. Quos corporis ea eos quam inventore atque ipsa nostrum quas sapiente rem, asperiores consectetur illo minima! Tempora expedita, rerum esse consequuntur modi nisi qui vitae similique vero amet neque laborum perferendis, placeat blanditiis, labore sequi perspiciatis deleniti magnam inventore. Quae?
             </div>
-        </div>
-    </div>
-    <div class="modal modal--more" id="moreModal">
-       <button class="button button--close"><span class="icon icon--close-gray"></span></button>
-        <h4 class="title title--fourth">
-            Видеокурс: мастер-класс от опытного сеошника
-        </h4>
-        <div class="wrapper">
-            <div class="text-description text-description--modal">
-                <div class="description">
-                    описание:
-                </div>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel quibusdam eius quam iste sed cumque sequi impedit inventore reprehenderit a quo architecto, excepturi repudiandae laboriosam beatae dicta placeat tempore corrupti.
-            </div>
-            <div class="course">
-                <img src="./images/252x170.png" alt="">
-                <div class="course__interactive">
-                    <a href="" class="link">
-                       <span class="icon icon--play"></span>
-                        смотреть демо ролик
-                    </a>
-                    <a href="" class="link">
-                       <span class="icon icon--vk-gold"></span>
-                        отзывы
-                    </a>
-                </div>
-                <table class="course__table">
-                    <tr>
-                        <td>Автор:</td>
-                        <td>Виталий Бережной</td>
-                    </tr>
-                    <tr>
-                        <td>Длительность:</td>
-                        <td>2 часа 31 минута</td>
-                    </tr>
-                    <tr>
-                        <td>Формат:</td>
-                        <td>Видео + файлы</td>
-                    </tr>
-                    <tr>
-                        <td>Размер:</td>
-                        <td>2.04Gb</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-        <div class="buy-section">
-            <div class="counter">
-                <span id="buyCount" class="count">92</span>
-                купили этот курс
-            </div>
-            <div class="reviews">
-                <div class="medium-mark">
-                    средняя оценка этому курсу:
-                    <span class="mark">4.3</span>
-                </div>
-                <ul class="stars">
-                    <li class="stars__item">
-                    <button class="button button--star">
-                        <span class="icon icon--star"></span>
-                    </button>
-                    </li>
-                    <li class="stars__item">
-                    <button class="button button--star">
-                        <span class="icon icon--star"></span>
-                    </button>
-                    </li>
-                    <li class="stars__item">
-                    <button class="button button--star">
-                        <span class="icon icon--star"></span>
-                    </button>
-                    </li>
-                    <li class="stars__item">
-                    <button class="button button--star">
-                        <span class="icon icon--star"></span>
-                    </button>
-                    </li>
-                    <li class="stars__item">
-                    <button class="button button--star">
-                        <span class="icon icon--star"></span>
-                    </button>
-                    </li>
-                </ul>
-            </div>
-            <a href="#buyModal" class="button" data-modal>
-                <span class="button__text">
-                        купить
-                    <span class="price">
-                            99 &#8381;
-                    </span>
-                    <span class="price price--old">
-                            999 &#8381;
-                    </span>
-                </span>
-            </a>
         </div>
     </div>
     <div id="overlay"></div>

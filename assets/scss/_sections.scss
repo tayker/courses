@@ -180,7 +180,10 @@
         }
     }
     &--goods{
-        position: relative;
+		display: none;
+		&.active{
+			display: block;
+		}
         &:before{
             content: "";
             position: absolute;
@@ -333,13 +336,15 @@
                 .button{
                     margin: 10px 0 0 0;
                     max-width: 100%;
-					
-
                 }
             }
         }
     }
 	&--courses-info{
+		display: none;
+		&.active{
+			display: block;
+		}
 		.title{
 			.link{
 				&--previous{
@@ -362,7 +367,9 @@
 			video{
 				background-color: black;
 				border-radius: 6px;
-				width: 100%;
+				width: auto;
+				height: auto;
+				max-height: 244px;
 				max-width: 466px;
 			}
 			.info{
@@ -402,6 +409,34 @@
 							line-height: 1.5;
 							font-weight: bold;
 							color: #000;
+						}
+						.price{
+							&-old{
+								font-weight: 400;
+								color: #666;
+								opacity: 0.5;
+								text-decoration: line-through;
+							}
+							&-now{
+								margin: 0 10px;
+								position: relative;
+								&:before, &:after{
+									position: absolute;
+									font-size: 20px;
+									top: 50%;
+									transform: translateY(-50%);
+								}
+								
+								&:after{
+									content: "\002F";
+									right: -6px;
+								}
+								&:before{
+									content: "\2010";
+									left: -10px;
+									top: 4px;
+								}
+							}
 						}
 					}
 				}
